@@ -1,0 +1,11 @@
+{% extends "demo3/layout.html" %}
+
+{% block body %}
+    <h1>Add Task:</h1>
+    <form action="{% url 'demo3:add' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+    <a href="{% url 'demo3:index' %}">View Tasks</a>
+{% endblock %}
